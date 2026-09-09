@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Exam Performance Indicator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #12213C;
+    --navy-deep: #0B1729;
+    --navy-mid: #16294A;
+    --paper: #FBF7EE;
+    --paper-line: #E4DCC8;
+    --ink: #1E2430;
+    --ink-soft: #5B6472;
+    --gold: #D9A441;
+    --gold-deep: #B4822C;
+    --mist: #97A2B8;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    min-height: 100%;
+    background: var(--navy-deep);
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(217,164,65,0.12), transparent 42%),
+      radial-gradient(circle at 95% 88%, rgba(217,164,65,0.08), transparent 45%);
+    color: #E7ECF3;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .stage{
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+  }
+
+  .kicker{
+    font-size: 13px;
+    color: var(--mist);
+    margin-bottom: 18px;
+  }
+
+  h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.18;
+    margin: 0 0 18px;
+    color: #fff;
+  }
+
+  .lede{
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--mist);
+    max-width: 46ch;
+    margin: 0 auto 40px;
+  }
+
+  /* ---- diagram: five profile inputs feeding one score ---- */
+
+  .diagram{
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    margin: 0 auto 40px;
+    display: block;
+  }
+
+  .chips{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .chip{
+    font-size: 12.5px;
+    color: #E7ECF3;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(217,164,65,0.45);
+    border-radius: 999px;
+    padding: 7px 16px;
+  }
+
+  .cta{
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--navy-deep);
+    background: var(--gold);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 15px 34px;
+    transition: transform 0.12s ease, background 0.15s ease;
+  }
+
+  .cta:hover{ background: var(--gold-deep); transform: translateY(-1px); }
+  .cta:active{ transform: translateY(0); }
+
+  .foot-note{
+    margin-top: 22px;
+    font-size: 12.5px;
+    color: var(--mist);
+  }
+
+  @media (max-width: 560px){
+    h1{ font-size: 32px; }
+    .lede{ font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="stage">
+
+    <div class="kicker">Exam performance indicator</div>
+
+    <h1>Estimate a student's math score before the exam</h1>
+
+    <p class="lede">
+      Enter a student's background and their reading and writing results — the model
+      predicts what their math score is likely to be.
+    </p>
+
+    <svg class="diagram" viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seven student profile signals converge into one predicted math score">
+      <g fill="none" stroke="#D9A441" stroke-opacity="0.45" stroke-width="1.2">
+        <path d="M40,20 C160,20 260,70 300,70"/>
+        <path d="M40,45 C160,45 260,70 300,70"/>
+        <path d="M40,70 C200,70 260,70 300,70"/>
+        <path d="M40,95 C160,95 260,70 300,70"/>
+        <path d="M40,120 C160,120 260,70 300,70"/>
+      </g>
+      <text x="46" y="24" font-family="Inter, sans-serif" font-size="11" fill="#E7ECF3">Gender · ethnicity</text>
+      <text x="46" y="49" font-family="Inter, sans-serif" font-size="11" fill="#E7ECF3">Parental education</text>
+      <text x="46" y="74" font-family="Inter, sans-serif" font-size="11" fill="#E7ECF3">Lunch · test prep</text>
+      <text x="46" y="99" font-family="Inter, sans-serif" font-size="11" fill="#E7ECF3">Reading score</text>
+      <text x="46" y="124" font-family="Inter, sans-serif" font-size="11" fill="#E7ECF3">Writing score</text>
+
+      <circle cx="345" cy="70" r="48" fill="none" stroke="#D9A441" stroke-width="1" stroke-dasharray="3 6" stroke-opacity="0.4"/>
+      <circle cx="345" cy="70" r="40" fill="#152541" stroke="#D9A441" stroke-width="2"/>
+      <text x="345" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" fill="#D9A441">Predicted</text>
+      <text x="345" y="80" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="13" fill="#fff">Math score</text>
+    </svg>
+
+    <a class="cta" href="{{ url_for('predict_datapoint') }}">Get started</a>
+
+    <p class="foot-note">Takes under a minute — seven quick fields.</p>
+
+  </div>
+
+</body>
+</html>
